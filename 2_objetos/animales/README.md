@@ -4,8 +4,8 @@ Se le asigna un proyecto en un zoologico donde le indican que debe crear instanc
 
 ## Actividades a realizar
 
-1. Haciendo uso de Bluej, cree las instancias de manera interactiva (sin hacer uso de un método main) para los animales que están en la siguiente imagen:
-Tenga en cuenta el uso de la tabla para asignar a cada animal su respectivo peso y altura.
+1. Haciendo uso de Bluej, cree las instancias de manera interactiva (sin hacer uso de un método main) para los animales que están en el siguiente enlace: [welovedogs](https://www.welovedogs.cz/en/sizes-table#)
+Escoja cualquier valor dentro del rango para el peso y la altura.
 SDS
 2.  Use el método de cada animal para calcular de manera interactiva el IMC
 3. Ahora realice los pasos 1 y 2 haciendo uso de un método main
