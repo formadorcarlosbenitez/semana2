@@ -14,13 +14,5 @@ Luego, a partir del IMC obtenido se pueden calcular si una persona tiene
 un peso normal, inferior o superior al normal u obesidad. Para generar estos
 resultados el IMC calculado debe estar en la siguiente tabla:
 <br/>
-IMC | Resultado 
---- | ---
-< 16 | Delgadez severa 
-[16-17) | Delgadez moderada
-[17-18.5) | Delgadez leve
-[18.5-25) | Peso normal
-[25-30) | Sobrepeso
-[30-35) | Obesidad leve
-[35-40) | Obesidad moderada
->=40 | Obesidad mórbida
+
+![tabla](./tabla.png)
