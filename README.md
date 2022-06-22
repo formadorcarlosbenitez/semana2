@@ -10,3 +10,6 @@ Cada una de las carpetas es una temática diferente, lo ideal es poder realizar 
 2.4 Los niveles de visibilidad (modificadores de acceso). <br />
 2.5 Contextos estático y dinámico.
 
+## En cada una de las carpetas tenemos los ejes temáticos
+ Dentro de cada eje temático se encotraran los ejercicios que vamos a desarrollar
+
