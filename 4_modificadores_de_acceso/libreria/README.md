@@ -1,4 +1,4 @@
-# Ejercicios modificadores de acceso:
+# Ejercicios libreria:
 
 ## Enunciado
 En base al UML crear el código fuente, el método addLibro, agrega un elemento tipo string a la libreria. Tenga en cuenta que la libreria solo puede guardar máximo 10 libros. El método calcularCantidad, calcula cuantos libros hay en la libreria. El método imprimirLibros, imprime libros en consola arrojando el siguiente resultado como ejemplo:
