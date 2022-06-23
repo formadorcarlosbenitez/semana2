@@ -15,7 +15,6 @@ una contraseña y un saldo inicial.
 3. Realice un método que permita descontar el saldo en el cajero.
 
 ## Tips
-## Tips
 - Recuerde que el nombre de las clases deben empezar en mayúsculas
 - Las clases en Java únicamente deben contener atributos y métodos
 - Los atributos son asociados a los datos que caracteriza a un objeto

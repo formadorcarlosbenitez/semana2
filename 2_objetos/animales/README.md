@@ -10,7 +10,6 @@ Escoja cualquier valor dentro del rango para el peso y la altura.
 3. Ahora realice los pasos 1 y 2 haciendo uso de un método main
 
 ## Tips
-## Tips
 - Recuerde que el nombre de las clases deben empezar en mayúsculas
 - Las clases en Java únicamente deben contener atributos y métodos
 - Los atributos son asociados a los datos que caracteriza a un objeto
