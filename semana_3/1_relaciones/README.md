@@ -9,21 +9,3 @@ Es cuando una clase se relaciona con otra por medio de un método. La asociació
 
 ![tabla](./uml_asociacion.png)
 
-
-### Unidireccional
-
-![tabla](./uml_asociacion_2.png)
-
-
-
-```
-public
-protected
-private
-```
-
-
-![tabla](./table.jpg)
-
-## Extras
-- Ver tutorial en [W3SCHOOLS](https://www.w3schools.com/java/java_modifiers.asp)
