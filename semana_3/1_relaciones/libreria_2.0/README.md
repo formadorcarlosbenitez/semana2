@@ -25,8 +25,8 @@ Título: La divina comedia, páginas: 274, autor: Dante Alighieri
 - Codigo de prueba (dentro de un método main):
 ```
 Libreria libreria = new Libreria("Panamericana");
-libreria.addLibro("Head First Java",722,"Kathy Sierra & Bert Bates");
-libreria.addLibro("El amor en los tiempos del cólera",490,"Gabriel García Marquez");
-libreria.addLibro("La divina comedia",274,"Dante Alighieri");
+libreria.addLibro(new Libro("Head First Java",722,"Kathy Sierra & Bert Bates"));
+libreria.addLibro(new Libro("El amor en los tiempos del cólera",490,"Gabriel García Marquez"));
+libreria.addLibro(new Libro("La divina comedia",274,"Dante Alighieri"));
 libreria.imprimirLibros();
 ```

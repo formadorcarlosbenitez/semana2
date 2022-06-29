@@ -42,8 +42,6 @@ public void imprimirMovimiento(){
 }
 ```
 
-![UML](./uml.png)
-
 ## Actividades a realizar
 
 1. Cree un proyecto de Bluej o Netbeans.
