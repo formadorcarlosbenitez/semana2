@@ -3,8 +3,8 @@
 ## Enunciado
 Se encuentra trabajando para un Banco, le entregan una clase con los datos necesarios para que la clase funcione en el microservicio del banco, debe entregar la clase Persona con la lógica implementada teniendo en cuenta que:
 
-El método ingreso debe restar a los fondos disponibles de la cuenta bancaria.
-El método egreso debe agregar una cantidad a los fondos disponibles de la cuenta bancaria. 
+El método ingreso debe sumar a los fondos disponibles de la cuenta bancaria.
+El método egreso debe restar una cantidad a los fondos disponibles de la cuenta bancaria. 
 El método checkFondos verifica en cada movimiento que los fondos no sean negativos.
 El método imprimirMovimiento imprime cada vez que se realiza un movimiento.
 El método transferTo transfiere el dinero de una cuenta a otra.
