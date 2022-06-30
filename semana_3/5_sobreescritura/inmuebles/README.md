@@ -20,4 +20,4 @@ están establecidos. Las oficinas tienen como atributo un valor boolean para
 determinar si son del Gobierno. Cada inmueble tiene un valor de compra.
 Este depende del área de cada inmueble según la tabla 4.2.
 
-![tabla](./tabla.png)
+![tabla](./tabla.PNG)
