@@ -26,13 +26,12 @@ Codigo de prueba
 
 ```
 public static void main(String args[]) {
-    ApartamentoFamiliar apto1 = new
-    ApartamentoFamiliar(103067,120,
-    “Avenida Santander 45-45”,3,2,200000);
-    System.out.println(“Datos apartamento”);
+    ApartamentoFamiliar apto1 = new ApartamentoFamiliar(103067,120,
+    "Avenida Santander 45-45”,3,2,200000);
+    System.out.println("Datos apartamento”);
     apto1.calcularPrecioVenta(apto1.valorArea);
     apto1.imprimir();
-    System.out.println(“Datos apartamento”);
+    System.out.println("Datos apartamento”);
     Apartaestudio aptestudio1 = new
     Apartaestudio(12354,50,”Avenida Caracas 30-15”,1,1);
     aptestudio1.calcularPrecioVenta(aptestudio1.valorArea);
@@ -42,11 +41,16 @@ public static void main(String args[]) {
 
 para el método imprimir, considere colocar en consola todos los datos de cada instancia. Ejemplo:
 ```
-void imprimir() {
-    System.out.println(“Identificador inmobiliario = “ +
+public void imprimir() {
+    System.out.println("Identificador inmobiliario = " +
     identificadorInmobiliario);
-    System.out.println(“Area = “ + área);
-    System.out.println(“Dirección = “ + dirección);
-    System.out.println(“Precio de venta = $” + precioVenta);
+    System.out.println("Area = " + area);
+    System.out.println("Dirección = " + direccion);
+    System.out.println("Precio de venta = $” + precioVenta);
 }
 ```
+
+## Tips
+- Considere los atributos valorArea y precioVenta para la clase inmueble
+- el metodo calcularPrecioVenta() debe hacer uso del valorArea (segun la tabla) y el area del inmueble.
+ 
