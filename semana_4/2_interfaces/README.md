@@ -30,4 +30,9 @@ public class Animal{
     void generarSonido(){}
 }
 ```
-De esta forma las interfaces se pueden usar tambien para polimorfismo como si fueran una superclase más.
+De esta forma las interfaces se pueden usar tambien para polimorfismo como si fueran una superclase más. También cumplen con la prueba IS-A (prueba clase A es una clase B).
+Ejemplo: Perro es una Mascota
+</br>
+Finalmente, a continuación vemos un ejemplo de UML cuando usamos interfaces.
+
+![uml](./uml.PNG)
