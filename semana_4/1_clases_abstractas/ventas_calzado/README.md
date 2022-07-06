@@ -17,7 +17,13 @@ La clase persona tiene atributos nombres, apellidos y cedula.
 3. Ejecuta el siguiente código de prueba
 
 ```
-
+        Vendedor vendedor1 = new Vendedor();
+        Calzado mocasin = new Mocasin();
+        Calzado sandalia = new Sandalia();
+        vendedor1.venderCalzado(mocasin);
+        vendedor1.venderCalzado(sandalia);
+        vendedor1.imprimirGanancias();
+        vendedor1.imprimirVentas();
 ```
 ## Tips
 - Trata de extraer cuantas y cuales clases necesitas crear
