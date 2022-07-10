@@ -3,7 +3,7 @@ Se requiere desarrollar un software para un parqueadero, el UML representa el pr
 - Automovil $4000 hora
 - Moto $2000 hora
 - Bicicleta $0
-El parqueadero tiene el metodo addVehiculo, esté metodo tiene como entrada un vehiculo, el cual usa su método calcularPrecio() para agregar el precio ingresos, a su vez el método calcularPrecio() usa el atributo tiempoEnParqueadero y una variable local con el precio por hora para calcular el precio del parqueadero.
+El parqueadero tiene el metodo addVehiculo, esté metodo tiene como entrada un vehiculo, el cual usa su método calcularPrecio() para agregar el precio ingresos, a su vez el método calcularPrecio() usa el atributo tiempoEnParqueadero y una variable local (variable creada dentro del metodo) con el precio por hora para calcular el precio del parqueadero.
 Tenga en cuenta que, el metodo addVehiculo tambien agrega el vehiculo a alguna de las listas según su capacidad máxima (longitud de la lista dada por cardinalidad).
 
 ![uml1](./uml1.png)
@@ -43,8 +43,9 @@ Bicicletas ["gris", "negra"]
 Automoviles ["yyy-106", "lll-106", "ooo-117"]
 ```
 
+
 ## Extra
-3. El parqueadero cobra por casco guardado, segun el nuevo UML donde deberia ir la nueva clase Casco. Verifique si necesita mas atributos o metodos para tener en cuenta el valor de cada casco guardado. Finalmente ejecute el nuevo codigo de prueba.
+4. El parqueadero cobra por casco guardado, segun el nuevo UML donde deberia ir la nueva clase Casco. Verifique si necesita mas atributos o metodos para tener en cuenta el valor de cada casco guardado. Finalmente ejecute el nuevo codigo de prueba.
 
 ![uml1](./uml2.png)
 
@@ -65,4 +66,5 @@ Automoviles ["yyy-106", "lll-106", "ooo-117"]
        p.imprimir();
   }
 ```
+
 

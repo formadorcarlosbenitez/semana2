@@ -1,5 +1,16 @@
 # Listas:
-Las listas son clases hechas para guardar elementos, muy similar a los arreglos. Java desde su version 5.0 implemento un conjunto de clases en el paquete collections. Veamos la jerarquia de clases e interfaces que implementan las listas:
+
+## Un arreglo (No lista) que guarda Strings.
+
+```
+String[] array = new String[3];
+```
+## Ejemplo de lista que guarda Strings.
+```
+ArrayList<String> lista = new ArrayList<>();
+```
+
+Las listas son clases hechas para guardar elementos, muy similar a los arreglos. Java implemento un conjunto de clases en el paquete collections. Veamos la jerarquia de clases e interfaces que implementan las listas:
 
 ![uml](./umlLists.PNG)
 
