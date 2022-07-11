@@ -28,7 +28,7 @@ Los botones son algo muy comun en cualquier tipo de software, en Swing los cream
 public static void main(String[] args){
     JFrame ventana = new JFrame("Titulo de mi ventana");
     JButton boton = new JButton("Haz click aqui");
-    ventana.add(boton);
+    ventana.getContentPane().add(boton);
     ventana.setSize(300,300);
     ventana.setVisible(true);
     ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -72,7 +72,7 @@ public class Ventana implements ActionListener{
         // Indicar al boton que vamos a escuchar sus eventos
         boton.addActionListener(this);
         // Agregar el boton a la ventana
-        ventana.add(boton);
+        ventana..getContentPane().add(boton);
 
         // Configurar ventanas
         ventana.setSize(300,300);
