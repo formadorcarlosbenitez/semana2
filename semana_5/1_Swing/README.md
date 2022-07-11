@@ -35,7 +35,7 @@ public static void main(String[] args){
 }
 ```
 En este caso se veria algo asi:
-[framewithbtn](./framewithbtn.png)
+![framewithbtn](./framewithbtn.png)
 Donde todo el boton abarca el espacio de la ventana creada.
 
 ## Eventos
