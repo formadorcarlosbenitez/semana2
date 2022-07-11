@@ -44,4 +44,6 @@ Fijemonos que la forma de agregar elementos es diferente. para acceder a un elem
 ## UML:
 En UML las listas se ven de la siguiente manera:
 ![uml2](./uml.png)
+Ya hemos visto el UML con relaciones de agregacion y composicion, en colecciones, cuando hay este tipo de relaciones se puede considerar que existe una clase contenedora y otra contenida.
+La clase contenedora es la que tiene el atributo que guarda otros objetos, este atributo es una colección.
 
