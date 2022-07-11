@@ -2,6 +2,8 @@
 Java es el lenguaje perfecto para programar software de escritorio. El paradigma POO y la implementación multiplataforma permite desarrollar software robusto y altamente escalable.
 Java Swing es una extension de clases que permite desarrollar interfaces graficas.
 
+![uml](./swing_uml.png)
+
 ## JFrame
 
 Los JFrame es lo primero que vemos al abrir un programa, esa ventana que se puede cerrar, maximizar o minimizar. Entonces, su unico fin, es el de guardar otros componentes de Swing, tales como botones, etiquetas, entradas. Un JFrame se crea y visualiza de la siguiente manera:
