@@ -53,16 +53,16 @@ Automoviles ["yyy-106", "lll-106", "ooo-117"]
    public static void main(String[] args) {
        Parqueadero p = new Parqueadero();
        p.nombreEstablecimiento = "MiParking";
-       addVehiculo(new Motocicleta("azul","zzz-10z",2,{new Casco()}));
-       addVehiculo(new Motocicleta("verde","aaa-10z",1,{new Casco()}));
-       addVehiculo(new Motocicleta("azul","ccc-10z",1,{new Casco(),new Casco()}));
-       addVehiculo(new Motocicleta("azul","sss-10z",1,{new Casco(),new Casco()}));
-       addVehiculo(new Motocicleta("azul","jjj-11z",2,{new Casco(),new Casco()}));
-       addVehiculo(new Bicicleta("gris",4));
-       addVehiculo(new Bicicleta("negra",2,{new Casco()}));
-       addVehiculo(new Automovil("rojo",6));
-       addVehiculo(new Automovil("celeste","lll-106",8));
-       addVehiculo(new Automovil("negro","ooo-117",10));
+       p.addVehiculo(new Motocicleta("azul","zzz-10z",2));
+       p.addVehiculo(new Motocicleta("verde","aaa-10z",1));
+       p.addVehiculo(new Motocicleta("azul","ccc-10z",1));
+       p.addVehiculo(new Motocicleta("azul","sss-10z",1));
+       p.addVehiculo(new Motocicleta("azul","jjj-11z",2));
+       p.addVehiculo(new Bicicleta("gris",4));
+       p.addVehiculo(new Bicicleta("negra",2));
+       p.addVehiculo(new Bicicleta("rojo",6));
+       p.addVehiculo(new Automovil("celeste","lll-106",8));
+       p.addVehiculo(new Automovil("negro","ooo-117",10));
        p.imprimir();
   }
 ```
