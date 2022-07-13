@@ -65,6 +65,11 @@ public class Ventana implements ActionListener{
     }
 
     public static void main(String[] args){
+        Ventana v = new Ventana();
+        v.ejecutar();
+    }
+
+    public void ejecutar(){
         // Creacion de ventana
         JFrame ventana = new JFrame("Titulo de mi ventana");
         // Creacion de boton
@@ -83,3 +88,4 @@ public class Ventana implements ActionListener{
 }
 ```
 Siempre debemos indicar al boton que vamos a escuchar usando el método addActionListener(ActionListener l), usamos el this para indicar que una instancia de nuestra clase va ser el parametro del metodo.
+
