@@ -102,6 +102,10 @@ class BtnListener implements ActionListener {
     }
 }
 ```
+Acordemonos que para escuchar eventos de un componente es necesario tener dos cosas:
+- Una clase que escucha (que implementa ActionListener)
+- Una instancia de la clase que escucha en el boton (Ver más adelante el método constructor)
+
 y finalmente un ejemplo de los métodos en un controlador son:
 
 ```
@@ -178,3 +182,4 @@ public static void main(String args[]) {
     });
 }
 ```
+Para conectar la vista con el controlador, es necesario crear instancias y luego asignar la vista al controlador por medio del constructor. (Como se ve en el código anterior)
