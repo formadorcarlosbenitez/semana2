@@ -27,4 +27,5 @@ Automaticamente aparecera la ventana para crear una tabla.
 ![creartabla](./creartabla.PNG)
 &nbsp;&nbsp;
 7. Finalmente, damos click en write changes para guardar los cambios en nuestra base de datos.
+&nbsp;&nbsp;
 ![guardar](./guardarcambios.PNG.PNG)
