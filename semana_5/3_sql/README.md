@@ -23,9 +23,12 @@ Automaticamente aparecera la ventana para crear una tabla.
 4. Se asigna un nombre a la tabla (en plural)
 5. Al dar click en add, se agrega una nueva columna a la tabla.
 6. Asignar nombre de columna (siempre en minuscula), tipo de variables a guardar en la columna, indicar si es obligatorio (check NN), indicar una sola llave primaria (recomendable que sea autoincrementable) y finalmente indicar si ese valor deberia ser unico (check U)
+
 &nbsp;&nbsp;
 ![creartabla](./creartabla.PNG)
 &nbsp;&nbsp;
+
 7. Finalmente, damos click en write changes para guardar los cambios en nuestra base de datos.
+
 &nbsp;&nbsp;
-![guardar](./guardarcambios.PNG.PNG)
+![guardar](./guardarcambios.PNG)
