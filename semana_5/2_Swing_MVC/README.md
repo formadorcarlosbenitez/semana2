@@ -40,7 +40,7 @@ JTable tabla1 = new JTable();
 Ahora, los datos que la tabla va mostrar se guardan en un modelo, si vamos a la tabla del principio de este documento, vemos que para un JTable existe una implementación DefaultTableModel, concordamos que es la clase que debemos usar por llevar el nombre Default. Por lo tanto, despues de crear un JTable, creamos un modelo de datos para finalmente asignarlo a la tabla.
 ```
 Object[] columnNames = {"Cedula","Apellido","Nombres"};
-Object[][] rows = {{1234,"Perez","Pepito"}, {0000,Juan,Ramirez}};        
+Object[][] rows = {{1234,"Perez","Pepito"}, {9999,"Juan","Ramirez"}};        
 DefaultTableModel model = new DefaultTableModel(rows, columnNames);
 tabla1.setModel(model);
 ```
