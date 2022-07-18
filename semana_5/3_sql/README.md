@@ -9,9 +9,22 @@ Son gestores y administradores de bases de datos relacionales que implementan un
 SQLite permite gestionar y realizar transacciones de bases de datos en un archivo local (generalmente con extension .db o .sqlite3). Todas las bases de datos se pueden gestionar mediante consola de comandos,. Sin embargo, al ser una tarea tediosa cuando se trata con muchas tablas, se suelen usar administradores de bases de datos. En el caso de SQLite existen programas como DBeaver, DbVisualizer y [DB Browser For SQLite](https://sqlitebrowser.org/).
 </br>
 Para el contenido de este curso vamos a usar DB Browser. Ahora, ¿Cómo creamos una base de datos?. Veamos el siguiente tutorial.
-</br>
-![creardb](./creardb.PNG)
-</br>
+&nbsp;
+
 1. En DB Browser dar click en New Database
-2. Buscar una carpeta para guardar la base de datos, preferiblemente en la raíz de un proyecto de NetBeans junto a la carpeta src y target.
-3. Asignar un nombre y extensión a la base de datos.
+2. Buscar una carpeta para guardar la base de datos, preferiblemente en la raíz de un proyecto de NetBeans junto a la carpeta src y target
+3. Asignar un nombre y extensión a la base de datos
+
+&nbsp;&nbsp;
+![creardb](./creardb.PNG)
+&nbsp;&nbsp;
+
+Automaticamente aparecera la ventana para crear una tabla.
+4. Se asigna un nombre a la tabla (en plural)
+5. Al dar click en add, se agrega una nueva columna a la tabla.
+6. Asignar nombre de columna (siempre en minuscula), tipo de variables a guardar en la columna, indicar si es obligatorio (check NN), indicar una sola llave primaria (recomendable que sea autoincrementable) y finalmente indicar si ese valor deberia ser unico (check U)
+&nbsp;&nbsp;
+![creartabla](./creartabla.PNG)
+&nbsp;&nbsp;
+7. Finalmente, damos click en write changes para guardar los cambios en nuestra base de datos.
+![guardar](./guardarcambios.PNG.PNG)
