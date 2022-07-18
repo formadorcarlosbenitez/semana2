@@ -63,6 +63,17 @@ Para usar SQLite o cualquier base de datos en Java, es necesario importar depend
 </project>
 ```
 
+## SQL
+Para el ciclo 2, vamos a usar el lenguaje de manejo DML. En la siguiente imagen se refleja las operaciones a usar. 
+
+</br>
+
+![DML](dml.PNG)
+
+Las sentencias son una estructura de codigo que permiten realizar una operacion sobre la base de datos, en este caso hacemos referencia a la ultima columna de la tabla anterior. Un resumen de las sentencias y su uso se puede ver en [w3schools](https://www.w3schools.com/sql/).
+
+### Clase Conexion
+
 Ahora, creamos una clase que permita conectar a la base de datos y permita realizar operaciones CRUD (Create, Read, Update y Delete). Empecemos con los atributos de la clase:
 
 - url, indica el tipo de driver (sqlite) y la ubicacion de la base de datos
@@ -94,10 +105,11 @@ public ConexionDB() {
 Se crea un método para cerrar la conexion. Este método usa el atributo conexion para cerrar el enlace con la base de datos.
 
 ```
-public void closeConnection() {
+public void cerrarConexion() {
     if (conexion != null) {
         try {
-           conexion.close(); 
+           conexion.close();
+           System.err.println("Se cerro la conexion con la base de datos!");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
@@ -107,4 +119,143 @@ public void closeConnection() {
 
 ### CRUD: Create
 
+Si nos fijamos todas las operaciones CRUD deben ir en métodos, por esta razon, para INSERTAR un registro en una tabla se usa un método como el siguiente.
 
+```
+public boolean crear(String textoSentencia) {
+    try {
+        sentencia = conexion.createStatement();
+        sentencia.execute(textoSentencia);
+        return true;
+    } catch (SQLException e) {
+        System.err.println(e.getMessage());
+        return false;
+    }
+}
+```
+
+### CRUD: Read
+
+Para consultar registros en una base de datos se usa el siguiente método.
+
+```
+public ResultSet consultar(String textoSentencia) {
+    try {
+        sentencia = conexion.createStatement();
+        resultadosConsulta = sentencia.executeQuery(textoSentencia);
+    } catch (SQLException e) {
+        System.out.println(e.getMessage());
+    }
+    return resultadosConsulta;
+}
+```
+
+### CRUD: Update
+
+Para actualizar un registro en una base de datos se usa el siguiente método.
+
+```
+public boolean actualizar(String textoSentencia) {
+    try {
+        sentencia = conexion.createStatement();
+        sentencia.executeUpdate(textoSentencia);
+        return true;
+    } catch (SQLException e) {
+        System.out.println(e.getMessage());
+        return false;
+    } 
+}
+```
+
+### CRUD: Delete
+
+Para eliminar un registro en una base de datos se usa el siguiente método.
+
+```
+public boolean borrar(String textoSentencia) {
+    try {
+        sentencia = conexion.createStatement();
+        sentencia.execute(textoSentencia);
+        return true;
+    } catch (SQLException e) {
+        System.err.println(e.getMessage());
+        return false;
+    }
+}
+```
+
+### Commit y Rollback
+En las transacciones a bases de datos existen estos dos conceptos. Los commit se usan para confirmar una transacción (Ejemplo, agregar un registro) y los Rollback se usan para descartar una transacción (Ejemplo, descargar la eliminación de un registro). Por defecto el uso de la conexion realiza el autoCommit, es decir, cada operación que se realice no tiene vuelta atrás.
+
+
+## Como usar la clase Conexion para persistir los datos
+Se crea otra clase que modele un objeto (que usemos para nuestro proyecto),
+por ejemplo, la clase motocicleta tiene:
+```
+private String placa;
+private String color;
+private int tiempoEnParqueadero;
+private double valorAPagar;
+
+public Motocicleta(String color, String placa, int tiempo) {
+    this.placa = placa;
+    this.color = color;
+    this.tiempoEnParqueadero = tiempoEnParqueadero;
+    valorAPagar = 2000 * tiempoEnParqueadero; // $2000 por hora
+}
+```
+
+### ReadOne
+Para leer un solo registro de la tabla creamos el siguiente metodo en la clase Motocicleta. Donde la variable sql contiene el texto que representa una sentencia en SQL (en este caso una consulta)
+
+```
+public Motocicleta getOne(int id) {
+    ConexionDB conexion = new ConexionDB();
+    String sql = "SELECT * FROM motocicletas WHERE id=" + id+ ";";
+    ResultSet rs = conexion.consultar(sql);
+    try {
+        if (rs.next()) {
+            id = rs.getInt("id");
+            color = rs.getString("color");
+            placa = rs.getString("placa");
+            tiempoEnParqueadero = rs.getInt("tiempo_en_parqueadero");
+            valorAPagar = rs.getDouble("valor_a_pagar");
+            conexion.cerrarConexion();
+        } else {
+            conexion.cerrarConexion();
+            return null;
+        }
+    } catch (SQLException e) {
+        System.err.println(e.getMessage());
+    }
+    return this;
+}
+```
+
+### ReadAll
+Para listar todos los elementos de la tabla se reemplaza el if por un while, ademas se crea una lista vacia para que a medida que se recupere cada celda de la tabla se creen las instancias para guardarlas en la lista.
+
+```
+public List<Motocicleta> listar() {
+    ConexionDB conexion = new ConexionDB();
+    List<Motocicleta> lista = new ArrayList<>();
+    String sql = "SELECT * FROM motocicletas";
+    Motocicleta m;
+    try {
+        ResultSet rs = conexion.consultar(sql);
+        while (rs.next()) {
+            m = new Motocicleta();
+            id = rs.getInt("id");
+            color = rs.getString("color");
+            placa = rs.getString("placa");
+            tiempoEnParqueadero = rs.getInt("tiempo_en_parqueadero");
+            valorAPagar = rs.getDouble("valor_a_pagar");
+            lista.add(p);
+        }
+    } catch (Exception e) {
+        System.out.println(ex.getMessage());
+    }
+    conexion.cerrarConexion();
+    return lista;
+}
+```
