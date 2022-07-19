@@ -192,12 +192,14 @@ En las transacciones a bases de datos existen estos dos conceptos. Los commit se
 Se crea otra clase que modele un objeto (que usemos para nuestro proyecto),
 por ejemplo, la clase motocicleta tiene:
 ```
+private int id;
 private String placa;
 private String color;
 private int tiempoEnParqueadero;
 private double valorAPagar;
 
-public Motocicleta(String color, String placa, int tiempo) {
+public Motocicleta(id, String color, String placa, int tiempo) {
+    this.id = id;
     this.placa = placa;
     this.color = color;
     this.tiempoEnParqueadero = tiempoEnParqueadero;
@@ -233,7 +235,7 @@ public Motocicleta getOne(int id) {
 ```
 
 ### ReadAll
-Para listar todos los elementos de la tabla se reemplaza el if por un while, ademas se crea una lista vacia para que a medida que se recupere cada celda de la tabla se creen las instancias para guardarlas en la lista.
+Para listar todos los elementos de la tabla se reemplaza el if por un while, ademas se crea una lista vacia para que a medida que se recupere cada celda de la tabla se creen las instancias para guardarlas en la lista. El método next() pasa el siguiente elemento de la variable rs (Usando los ResultSet no es posible obtener una fila completa usando un indice, mientras que con las listas se usa el método get(i) para obtener el i-esimo elemento)
 
 ```
 public List<Motocicleta> listar() {
@@ -244,13 +246,9 @@ public List<Motocicleta> listar() {
     try {
         ResultSet rs = conexion.consultar(sql);
         while (rs.next()) {
-            m = new Motocicleta();
-            id = rs.getInt("id");
-            color = rs.getString("color");
-            placa = rs.getString("placa");
-            tiempoEnParqueadero = rs.getInt("tiempo_en_parqueadero");
-            valorAPagar = rs.getDouble("valor_a_pagar");
-            lista.add(p);
+            m = new Motocicleta(rs.getInt("id"), rs.getString("color"),
+                rs.getString("placa"),rs.getInt("tiempo_en_parqueadero"));
+            lista.add(m);
         }
     } catch (Exception e) {
         System.out.println(ex.getMessage());
