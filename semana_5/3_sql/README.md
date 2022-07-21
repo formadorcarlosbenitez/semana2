@@ -190,38 +190,46 @@ En las transacciones a bases de datos existen estos dos conceptos. Los commit se
 
 ## Como usar la clase Conexion para persistir los datos
 Se crea otra clase que modele un objeto (que usemos para nuestro proyecto),
-por ejemplo, la clase motocicleta tiene:
+por ejemplo, la clase Producto tiene:
 ```
-private int id;
-private String placa;
-private String color;
-private int tiempoEnParqueadero;
-private double valorAPagar;
-
-public Motocicleta(id, String color, String placa, int tiempo) {
+public int id;
+public String nombre;
+public int cantidad;
+public int precio;
+public String categoria;
+private ConexionDB conexion = new ConexionDB();
+public Producto(int id, String nombre, int cantidad, int precio, String categoria) {
     this.id = id;
-    this.placa = placa;
-    this.color = color;
-    this.tiempoEnParqueadero = tiempoEnParqueadero;
-    valorAPagar = 2000 * tiempoEnParqueadero; // $2000 por hora
+    this.nombre = nombre;
+    this.cantidad = cantidad;
+    this.precio = precio;
+    this.categoria = categoria;
+}
+public Producto(String nombre, int cantidad, int precio, String categoria) {
+    this.nombre = nombre;
+    this.cantidad = cantidad;
+    this.precio = precio;
+    this.categoria = categoria;
+}
+public Producto() {
 }
 ```
 
 ### ReadOne
-Para leer un solo registro de la tabla creamos el siguiente metodo en la clase Motocicleta. Donde la variable sql contiene el texto que representa una sentencia en SQL (en este caso una consulta)
+Para leer un solo registro de la tabla creamos el siguiente metodo en la clase Producto. Donde la variable sql contiene el texto que representa una sentencia en SQL (en este caso una consulta)
 
 ```
-public Motocicleta getOne(int id) {
+public Producto getOne(int id) {
     ConexionDB conexion = new ConexionDB();
-    String sql = "SELECT * FROM motocicletas WHERE id=" + id+ ";";
+    String sql = "SELECT * FROM productos WHERE id=" + id+ ";";
     ResultSet rs = conexion.consultar(sql);
     try {
         if (rs.next()) {
             id = rs.getInt("id");
-            color = rs.getString("color");
-            placa = rs.getString("placa");
-            tiempoEnParqueadero = rs.getInt("tiempo_en_parqueadero");
-            valorAPagar = rs.getDouble("valor_a_pagar");
+            color = rs.getString("nombre");
+            cantidad = rs.getInt("cantidad");
+            precio = rs.getInt("precio");
+            categoria = rs.getString("categoria");
             conexion.cerrarConexion();
         } else {
             conexion.cerrarConexion();
@@ -238,22 +246,56 @@ public Motocicleta getOne(int id) {
 Para listar todos los elementos de la tabla se reemplaza el if por un while, ademas se crea una lista vacia para que a medida que se recupere cada celda de la tabla se creen las instancias para guardarlas en la lista. El método next() pasa el siguiente elemento de la variable rs (Usando los ResultSet no es posible obtener una fila completa usando un indice, mientras que con las listas se usa el método get(i) para obtener el i-esimo elemento)
 
 ```
-public List<Motocicleta> listar() {
-    ConexionDB conexion = new ConexionDB();
-    List<Motocicleta> lista = new ArrayList<>();
-    String sql = "SELECT * FROM motocicletas";
-    Motocicleta m;
+public List<Producto> getProductos() {
+    List<Producto> lista = new ArrayList<>();
+    String sql = "SELECT * FROM productos;";
     try {
         ResultSet rs = conexion.consultar(sql);
         while (rs.next()) {
-            m = new Motocicleta(rs.getInt("id"), rs.getString("color"),
-                rs.getString("placa"),rs.getInt("tiempo_en_parqueadero"));
-            lista.add(m);
+            lista.add(new Producto(rs.getInt("id"), rs.getString("nombre"),
+                    rs.getInt("cantidad"), rs.getInt("precio"), rs.getStrin("categoria")));
         }
-    } catch (Exception e) {
-        System.out.println(ex.getMessage());
+    } catch (SQLException e) {
+        System.out.println(e.getMessage());
     }
     conexion.cerrarConexion();
     return lista;
+}
+```
+
+### Update
+El método update usa los atributos del objeto para armar la sentecia SQL y ejecutarla usando el metodo de la clase Conexion.
+
+```
+public void update() {
+    String sql = "UPDATE productos\n"
+            + "SET nombre = '" + nombre + "', cantidad = " + cantidad
+            + ", precio = " + precio + ", categoria= '" + categoria + "'\n"
+            + "WHERE id = "+id+";";
+    conexion.actualizar(sql);
+    conexion.cerrarConexion();
+}
+```
+
+### Insert
+Al igual que update, se usan los atributos del objeto para armar la sentencia SQL a ejecutar.
+
+```
+public void save() {
+    String sql = "INSERT INTO productos(nombre, cantidad, precio, categoria)\n"
+            + "VALUES ('" + nombre + "', " + cantidad + ", " + precio + ", '" +categoria + "');";
+    conexion.crear(sql);
+    conexion.cerrarConexion();
+}
+```
+
+### Delete
+Eliminar solo necesita el id (PK, llave primaria) para borrar un elemento en la tabla. Se puede eliminar usando cualquier otro campo. (Ejemplo, "DELETE FROM productos WHERE nombre="+nombre+";")
+
+```
+public void delete(){
+    String sql = "DELETE FROM productos WHERE id="+id+";";
+    conexion.borrar(sql);
+    conexion.cerrarConexion();
 }
 ```

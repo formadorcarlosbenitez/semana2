@@ -27,17 +27,6 @@ Cada una de las carpetas es una temática diferente, lo ideal es poder realizar 
 - 4.6 Conjuntos
 - 4.7 Clases contenedoras predefinidas en los lenguajes de programación (patrón contenedor)
 
-
-## Semana 4, eje temático 4:
-- 4.1 Introducción
-- 4.2 Clases abstractas, modelado e implementación
-- 4.3 Clases interfaces, modelado e implementación
-- 4.4 List
-- 4.5 Mapas
-- 4.6 Conjuntos
-- 4.7 Clases contenedoras predefinidas en los lenguajes de programación (patrón contenedor)
-
-
 ## Semana 5 y 6, eje temático 5:
 - 5.1 Introducción
 - 5.1.2 Swing como interfaz gráfica para Java (Ventanas, paneles y etiquetas.
